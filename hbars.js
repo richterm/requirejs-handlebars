@@ -45,11 +45,10 @@ define(['text', 'handlebars'], function (text, Handlebars) {
                 onload(buildMap[moduleName]);
 
             } else {
-                var ext = (config.hbars && config.hbars.extension) || '.hbs',
-                    path = (config.hbars && config.hbars.path) || '',
+                var path = (config.hbars && config.hbars.path) || '',
                     compileOptions = (config.hbars && config.hbars.compileOptions) || {};
 
-                text.load(path + moduleName + ext, parentRequire, function (source) {
+                text.load(path + moduleName, parentRequire, function (source) {
                     if (config.isBuild) {
                         // We store the precompiled template so we can use the
                         // handlebars.runtime after build.
