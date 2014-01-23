@@ -31,11 +31,11 @@
 /*jslint nomen: true */
 /*global define: false */
 
-define(['text', 'Handlebars'], function (text, Handlebars) {
+define(['text', 'handlebars'], function (text, Handlebars) {
     'use strict';
 
     var buildMap = {},
-        buildTemplateSource = "define('{pluginName}!{moduleName}', ['Handlebars'], function (Handlebars) { return Handlebars.template({content}); });\n";
+        buildTemplateSource = "define('{pluginName}!{moduleName}', ['handlebars'], function (Handlebars) { return Handlebars.template({content}); });\n";
 
     return {
         version: '0.0.2',
@@ -45,7 +45,7 @@ define(['text', 'Handlebars'], function (text, Handlebars) {
                 onload(buildMap[moduleName]);
 
             } else {
-                var ext = (config.hbars && config.hbars.extension) || '.html',
+                var ext = (config.hbars && config.hbars.extension) || '.hbs',
                     path = (config.hbars && config.hbars.path) || '',
                     compileOptions = (config.hbars && config.hbars.compileOptions) || {};
 
